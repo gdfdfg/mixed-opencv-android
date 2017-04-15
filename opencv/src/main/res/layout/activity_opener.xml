@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   	android:orientation="vertical"
+   	android:background="#A6A6A6"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_pick"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Pick"
+            android:onClick="click"
+            />
+        <Button
+            android:id="@+id/btn_plate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/planedetect"
+            android:onClick="click"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/myshow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="5dp"
+        android:text="@string/wait_detect" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical" >
+
+    <com.daiyinger.carplate.DragImageView
+        android:id="@+id/imageview"
+        android:layout_width="fill_parent"
+        android:layout_height="433dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ai" />
+  
+    </LinearLayout>
+
+</LinearLayout>

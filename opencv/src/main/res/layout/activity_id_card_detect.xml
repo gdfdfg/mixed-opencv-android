@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:spinner="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context=".MainActivity"
+    android:background="@android:color/darker_gray"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/blue_linearlayout"
+        >
+
+        <com.chuangweizong.opencv.view.spinner.NiceSpinner
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nice_spinner"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="10dp"
+            spinner:textTint="@android:color/darker_gray"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/blue_transform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_selector"
+            android:paddingBottom="8dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:layout_gravity="center_vertical"
+            android:paddingTop="8dp"
+            android:text="识别"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_below="@+id/blue_linearlayout"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/idcard"
+            android:layout_weight="1"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView"
+            android:layout_weight="1"
+            android:src="@drawable/ic_launcher"
+            android:layout_centerInParent="true" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

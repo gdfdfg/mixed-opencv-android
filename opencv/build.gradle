@@ -1,0 +1,133 @@
+apply plugin: 'com.android.model.application'
+
+model{
+    android {
+        compileSdkVersion 23
+        buildToolsVersion "22.0.1"
+
+        defaultConfig.with {
+
+            applicationId "com.chuangweizhong.opencv"
+            minSdkVersion.apiLevel 18
+            targetSdkVersion.apiLevel 23
+            versionCode 1
+            versionName "1.0"
+        }
+    }
+
+    android.sources {
+        main {
+            jni {
+                source {
+                    srcDir "src/main/jni"
+                    srcDirs "src/main/jniLibs"
+                }
+            }
+        }
+    }
+    android.buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles.add(file('proguard-rules.pro'))
+        }
+    }
+
+    android.ndk {
+        moduleName = "myOpenCV"
+        cppFlags.add("-std=c++11")
+        cppFlags.add("-frtti")  //c++代码编译选项
+        cppFlags.add("-fexceptions") //c++代码编译选项
+        cppFlags.add("-I${file("native/jni/include")}".toString())
+        cppFlags.add("-I${file("native/jni/include/opencv")}".toString())
+        cppFlags.add("-I${file("native/opener/include")}".toString())
+        ldLibs.addAll(["android", "EGL", "GLESv2", "dl", "log", "z","jnigraphics"]) //编译需要
+        stl = 'gnustl_shared' //能够实现C++代码自动提示的关键
+    }
+
+    android.productFlavors {
+
+//        create("arm") {
+//            ndk.with {
+//                abiFilters.add("armeabi")
+//                String libsDir = getProjectDir().getParent() + "\\opencv\\native\\libs\\armeabi\\"
+//                String thirdPartyDir = getProjectDir().getParent() + "\\opencv\\native\\3rdparty\\libs\\armeabi\\"
+//
+//                ldFlags.add(libsDir + "libopencv_features2d.a")
+//                ldFlags.add(libsDir + "libopencv_flann.a")
+//                ldFlags.add(libsDir + "libopencv_imgproc.a")
+//                ldFlags.add(libsDir + "libopencv_core.a")
+//                ldFlags.add(libsDir + "libopencv_highgui.a")
+//                ldFlags.add(libsDir + "libopencv_calib3d.a")//注意添加的先后顺序
+//                ldFlags.add(libsDir + "libopencv_objdetect.a")
+//                ldFlags.add(libsDir + "libopencv_ml.a")
+//                ldFlags.add(libsDir + "libopencv_imgcodecs.a")
+//                ldFlags.add(libsDir + "libopencv_xfeatures2d.a")
+//                ldFlags.add(thirdPartyDir + "liblibjpeg.a")
+//                ldFlags.add(thirdPartyDir + "liblibwebp.a")
+//                ldFlags.add(thirdPartyDir + "liblibpng.a")
+//                ldFlags.add(thirdPartyDir + "liblibtiff.a")
+//                ldFlags.add(thirdPartyDir + "liblibjasper.a")
+//                ldFlags.add(thirdPartyDir + "libIlmImf.a")
+//                ldFlags.add(thirdPartyDir + "libtegra_hal.a")
+//                ldFlags.add(thirdPartyDir + "libtbb.a")
+//            }
+//        }
+//        create("armv7") {
+//            ndk.with {
+//                abiFilters.add("armeabi-v7a")
+//                String libsDir = getProjectDir().getParent() + "\\opencv\\native\\libs\\armeabi-v7a\\";
+//                String thirdPartyDir = getProjectDir().getParent() + "\\opencv\\native\\3rdparty\\libs\\armeabi-v7a\\";
+//
+//                ldFlags.add(libsDir + "libopencv_features2d.a")
+//                ldFlags.add(libsDir + "libopencv_flann.a")
+//                ldFlags.add(libsDir + "libopencv_imgproc.a")
+//                ldFlags.add(libsDir + "libopencv_core.a")
+//                ldFlags.add(libsDir + "libopencv_highgui.a")
+//                ldFlags.add(libsDir + "libopencv_calib3d.a")
+//                ldFlags.add(libsDir + "libopencv_xfeatures2d.a")
+//                ldFlags.add(thirdPartyDir + "liblibjpeg.a")
+//                ldFlags.add(thirdPartyDir + "liblibwebp.a")
+//                ldFlags.add(thirdPartyDir + "liblibpng.a")
+//                ldFlags.add(thirdPartyDir + "liblibtiff.a")
+//                ldFlags.add(thirdPartyDir + "liblibjasper.a")
+//                ldFlags.add(thirdPartyDir + "libIlmImf.a")
+//                ldFlags.add(thirdPartyDir + "libtegra_hal.a")
+//                ldFlags.add(thirdPartyDir + "libtbb.a")
+//            }
+//        }
+        create("x86") {
+            ndk.with {
+                abiFilters.add("x86")
+                String libsDir = getProjectDir().getParent() + "\\opencv\\native\\libs\\x86\\";
+                String thirdPartyDir = getProjectDir().getParent() + "\\opencv\\native\\3rdparty\\libs\\x86\\";
+
+                ldFlags.add(libsDir + "libopencv_features2d.a")
+                ldFlags.add(libsDir + "libopencv_xfeatures2d.a")
+                ldFlags.add(libsDir + "libopencv_flann.a")
+                ldFlags.add(libsDir + "libopencv_imgproc.a")
+                ldFlags.add(libsDir + "libopencv_core.a")
+                ldFlags.add(libsDir + "libopencv_highgui.a")
+                ldFlags.add(libsDir + "libopencv_calib3d.a")
+                ldFlags.add(libsDir + "libopencv_objdetect.a")
+                ldFlags.add(libsDir + "libopencv_ml.a")
+                ldFlags.add(libsDir + "libopencv_imgcodecs.a")
+
+                ldFlags.add(thirdPartyDir + "liblibjpeg.a")
+                ldFlags.add(thirdPartyDir + "liblibwebp.a")
+                ldFlags.add(thirdPartyDir + "liblibpng.a")
+                ldFlags.add(thirdPartyDir + "liblibtiff.a")
+                ldFlags.add(thirdPartyDir + "liblibjasper.a")
+                ldFlags.add(thirdPartyDir + "libIlmImf.a")
+                ldFlags.add(thirdPartyDir + "libippicv.a")
+                ldFlags.add(thirdPartyDir + "libtbb.a")
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.0.0'
+    compile 'com.android.support:support-v4:23.0.0'
+    compile'com.squareup.okhttp3:okhttp:3.4.1'
+}
