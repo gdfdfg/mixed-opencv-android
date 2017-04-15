@@ -39,20 +39,12 @@
         android:allowBackup="true"
         android:label="@string/app_name" >
 
-        <meta-data android:name="com.alibaba.apigateway.appKey" android:value="23753262" />
-        <meta-data android:name="com.alibaba.apigateway.appSecret" android:value="5becb23c668520ec761cfae48b9bb6e8" />
-
         <uses-sdk
             android:minSdkVersion="18"
             android:targetSdkVersion="23" />
-        <!--
-                               <activity  android:label="@string/app_name" android:launchMode="standard" android:name="com.chuangweizong.opencv.filter.Main.ImageFilterMain" android:screenOrientation="portrait" >
-                                   <intent-filter >
-                                       <action android:name="android.intent.action.MAIN" />
-                                       <category android:name="android.intent.category.LAUNCHER" />
-                                   </intent-filter>
-                               </activity>
-        -->
+
+        <activity  android:label="@string/app_name" android:launchMode="standard" android:name="com.chuangweizong.opencv.filter.Main.ImageFilterMain" android:screenOrientation="portrait" >
+        </activity>
         <!--
         <activity
             android:name="com.chuangweizong.opencv.activity.GreyActivity"
@@ -64,7 +56,6 @@
             </intent-filter>
         </activity>
         -->
-
         <activity
             android:name="com.chuangweizong.opencv.activity.BlurActivity"
             android:label="@string/app_name" >
@@ -113,7 +104,7 @@
             android:name="com.chuangweizong.opencv.activity.EdgeDetectActivity"
             android:label="@string/title_activity_morphological" >
         </activity>
-        <!--
+
         <activity
             android:name="com.chuangweizong.opencv.activity.OpencvSampleListActivity"
             android:label="@string/title_activity_edge_detect" >
@@ -123,16 +114,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        -->
-        <activity
-            android:name="com.chuangweizong.opencv.activity.MainActivity"
-            android:label="@string/title_activity_edge_detect" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name="com.chuangweizong.opencv.activity.AngularPointActivity"
             android:label="@string/title_activity_angular_point" >
@@ -181,6 +163,12 @@
             android:name="com.chuangweizong.opencv.activity.IdCardDetectActivity"
             android:label="@string/title_activity_id_card_detect" >
         </activity>
+
+        <activity
+            android:name="com.chuangweizong.opencv.activity.ChineseDetectActivity"
+            android:label="@string/title_activity_id_card_detect" >
+        </activity>
+
         <activity
             android:name="com.chuangweizong.opencv.activity.OpencvFaceHaarDetectActivity"
             android:label="@string/title_activity_opencv_face_detect" >

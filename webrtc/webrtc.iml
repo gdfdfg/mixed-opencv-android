@@ -95,6 +95,7 @@
     <orderEntry type="library" exported="" name="appcompat-v7-23.0.0" level="project" />
     <orderEntry type="library" exported="" name="video_capture_module_java" level="project" />
     <orderEntry type="library" exported="" name="video_render_module_java" level="project" />
+    <orderEntry type="library" exported="" name="libjingle_peerconnection" level="project" />
     <orderEntry type="library" exported="" name="support-v4-23.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-23.0.0" level="project" />
   </component>

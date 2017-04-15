@@ -46,32 +46,32 @@ model{
 
     android.productFlavors {
 
-//        create("arm") {
-//            ndk.with {
-//                abiFilters.add("armeabi")
-//                String libsDir = getProjectDir().getParent() + "\\opencv\\native\\libs\\armeabi\\"
-//                String thirdPartyDir = getProjectDir().getParent() + "\\opencv\\native\\3rdparty\\libs\\armeabi\\"
-//
-//                ldFlags.add(libsDir + "libopencv_features2d.a")
-//                ldFlags.add(libsDir + "libopencv_flann.a")
-//                ldFlags.add(libsDir + "libopencv_imgproc.a")
-//                ldFlags.add(libsDir + "libopencv_core.a")
-//                ldFlags.add(libsDir + "libopencv_highgui.a")
-//                ldFlags.add(libsDir + "libopencv_calib3d.a")//注意添加的先后顺序
-//                ldFlags.add(libsDir + "libopencv_objdetect.a")
-//                ldFlags.add(libsDir + "libopencv_ml.a")
-//                ldFlags.add(libsDir + "libopencv_imgcodecs.a")
-//                ldFlags.add(libsDir + "libopencv_xfeatures2d.a")
-//                ldFlags.add(thirdPartyDir + "liblibjpeg.a")
-//                ldFlags.add(thirdPartyDir + "liblibwebp.a")
-//                ldFlags.add(thirdPartyDir + "liblibpng.a")
-//                ldFlags.add(thirdPartyDir + "liblibtiff.a")
-//                ldFlags.add(thirdPartyDir + "liblibjasper.a")
-//                ldFlags.add(thirdPartyDir + "libIlmImf.a")
-//                ldFlags.add(thirdPartyDir + "libtegra_hal.a")
-//                ldFlags.add(thirdPartyDir + "libtbb.a")
-//            }
-//        }
+        create("arm") {
+            ndk.with {
+                abiFilters.add("armeabi")
+                String libsDir = getProjectDir().getParent() + "\\opencv\\native\\libs\\armeabi\\"
+                String thirdPartyDir = getProjectDir().getParent() + "\\opencv\\native\\3rdparty\\libs\\armeabi\\"
+
+                ldFlags.add(libsDir + "libopencv_features2d.a")
+                ldFlags.add(libsDir + "libopencv_flann.a")
+                ldFlags.add(libsDir + "libopencv_imgproc.a")
+                ldFlags.add(libsDir + "libopencv_core.a")
+                ldFlags.add(libsDir + "libopencv_highgui.a")
+                ldFlags.add(libsDir + "libopencv_calib3d.a")//注意添加的先后顺序
+                ldFlags.add(libsDir + "libopencv_objdetect.a")
+                ldFlags.add(libsDir + "libopencv_ml.a")
+                ldFlags.add(libsDir + "libopencv_imgcodecs.a")
+                ldFlags.add(libsDir + "libopencv_xfeatures2d.a")
+                ldFlags.add(thirdPartyDir + "liblibjpeg.a")
+                ldFlags.add(thirdPartyDir + "liblibwebp.a")
+                ldFlags.add(thirdPartyDir + "liblibpng.a")
+                ldFlags.add(thirdPartyDir + "liblibtiff.a")
+                ldFlags.add(thirdPartyDir + "liblibjasper.a")
+                ldFlags.add(thirdPartyDir + "libIlmImf.a")
+                ldFlags.add(thirdPartyDir + "libtegra_hal.a")
+                ldFlags.add(thirdPartyDir + "libtbb.a")
+            }
+        }
 //        create("armv7") {
 //            ndk.with {
 //                abiFilters.add("armeabi-v7a")
@@ -95,33 +95,33 @@ model{
 //                ldFlags.add(thirdPartyDir + "libtbb.a")
 //            }
 //        }
-        create("x86") {
-            ndk.with {
-                abiFilters.add("x86")
-                String libsDir = getProjectDir().getParent() + "\\opencv\\native\\libs\\x86\\";
-                String thirdPartyDir = getProjectDir().getParent() + "\\opencv\\native\\3rdparty\\libs\\x86\\";
-
-                ldFlags.add(libsDir + "libopencv_features2d.a")
-                ldFlags.add(libsDir + "libopencv_xfeatures2d.a")
-                ldFlags.add(libsDir + "libopencv_flann.a")
-                ldFlags.add(libsDir + "libopencv_imgproc.a")
-                ldFlags.add(libsDir + "libopencv_core.a")
-                ldFlags.add(libsDir + "libopencv_highgui.a")
-                ldFlags.add(libsDir + "libopencv_calib3d.a")
-                ldFlags.add(libsDir + "libopencv_objdetect.a")
-                ldFlags.add(libsDir + "libopencv_ml.a")
-                ldFlags.add(libsDir + "libopencv_imgcodecs.a")
-
-                ldFlags.add(thirdPartyDir + "liblibjpeg.a")
-                ldFlags.add(thirdPartyDir + "liblibwebp.a")
-                ldFlags.add(thirdPartyDir + "liblibpng.a")
-                ldFlags.add(thirdPartyDir + "liblibtiff.a")
-                ldFlags.add(thirdPartyDir + "liblibjasper.a")
-                ldFlags.add(thirdPartyDir + "libIlmImf.a")
-                ldFlags.add(thirdPartyDir + "libippicv.a")
-                ldFlags.add(thirdPartyDir + "libtbb.a")
-            }
-        }
+//        create("x86") {
+//            ndk.with {
+//                abiFilters.add("x86")
+//                String libsDir = getProjectDir().getParent() + "\\opencv\\native\\libs\\x86\\";
+//                String thirdPartyDir = getProjectDir().getParent() + "\\opencv\\native\\3rdparty\\libs\\x86\\";
+//
+//                ldFlags.add(libsDir + "libopencv_features2d.a")
+//                ldFlags.add(libsDir + "libopencv_xfeatures2d.a")
+//                ldFlags.add(libsDir + "libopencv_flann.a")
+//                ldFlags.add(libsDir + "libopencv_imgproc.a")
+//                ldFlags.add(libsDir + "libopencv_core.a")
+//                ldFlags.add(libsDir + "libopencv_highgui.a")
+//                ldFlags.add(libsDir + "libopencv_calib3d.a")
+//                ldFlags.add(libsDir + "libopencv_objdetect.a")
+//                ldFlags.add(libsDir + "libopencv_ml.a")
+//                ldFlags.add(libsDir + "libopencv_imgcodecs.a")
+//
+//                ldFlags.add(thirdPartyDir + "liblibjpeg.a")
+//                ldFlags.add(thirdPartyDir + "liblibwebp.a")
+//                ldFlags.add(thirdPartyDir + "liblibpng.a")
+//                ldFlags.add(thirdPartyDir + "liblibtiff.a")
+//                ldFlags.add(thirdPartyDir + "liblibjasper.a")
+//                ldFlags.add(thirdPartyDir + "libIlmImf.a")
+//                ldFlags.add(thirdPartyDir + "libippicv.a")
+//                ldFlags.add(thirdPartyDir + "libtbb.a")
+//            }
+//        }
     }
 }
 

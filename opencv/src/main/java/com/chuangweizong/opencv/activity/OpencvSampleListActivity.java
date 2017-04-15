@@ -9,6 +9,7 @@ import android.widget.SimpleAdapter;
 
 import com.chuangweizong.opencv.activity.opencvsample.OpencvElegantSampleListActivity;
 import com.daiyinger.carplate.OpenERActivity;
+import com.chuangweizong.opencv.filter.Main.ImageFilterMain;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,44 +58,52 @@ public class OpencvSampleListActivity extends ListActivity {
                         activityIntent.setClass(getApplicationContext(),IdCardDetectActivity.class);
                         break;
                     case 9:
-                        activityIntent.setClass(getApplicationContext(),OpencvFaceHaarDetectActivity.class);
+                        activityIntent.setClass(getApplicationContext(),ChineseDetectActivity.class);
                         break;
                     case 10:
-                        activityIntent.setClass(getApplicationContext(),OpencvFaceLBPDetectActivity.class);
+                        activityIntent.setClass(getApplicationContext(),OpencvFaceHaarDetectActivity.class);
                         break;
                     case 11:
-                        activityIntent.setClass(getApplicationContext(),FaceDetectActivity.class);
+                        activityIntent.setClass(getApplicationContext(),OpencvFaceLBPDetectActivity.class);
                         break;
                     case 12:
-                        activityIntent.setClass(getApplicationContext(),HogSVMPeopleActivity.class);
+                        activityIntent.setClass(getApplicationContext(),FaceDetectActivity.class);
                         break;
                     case 13:
-                        activityIntent.setClass(getApplicationContext(),FlowAndTrackerActivity.class);
+                        activityIntent.setClass(getApplicationContext(),HogSVMPeopleActivity.class);
                         break;
                     case 14:
-                        activityIntent.setClass(getApplicationContext(),PyramidActivity.class);
+                        activityIntent.setClass(getApplicationContext(),FlowAndTrackerActivity.class);
                         break;
                     case 15:
-                        activityIntent.setClass(getApplicationContext(),ImageTrainActivity.class);
+                        activityIntent.setClass(getApplicationContext(),PyramidActivity.class);
                         break;
                     case 16:
-                        activityIntent.setClass(getApplicationContext(),LensActivity.class);
+                        activityIntent.setClass(getApplicationContext(),ImageTrainActivity.class);
                         break;
                     case 17:
+                        activityIntent.setClass(getApplicationContext(),LensActivity.class);
+                        break;
+                    case 18:
                         activityIntent.setClass(getApplicationContext(), OpenERActivity.class);
                         break;
 
-                    case 18:
+                    case 19:
                         activityIntent.setClass(getApplicationContext(), SlopeCorrectActivity.class);
                         break;
 
-                    case 19:
+                    case 20:
                         activityIntent.setClass(getApplicationContext(), CameraActivity.class);
                         break;
+                    case 21:
+                        activityIntent.setClass(getApplicationContext(), ImageFilterMain.class);
+                        break;
 
-                    case 20:
+
+                    case 22:
                         activityIntent.setClass(getApplicationContext(), OpencvElegantSampleListActivity.class);
                         break;
+
                 }
                 startActivity(activityIntent);
             }
@@ -140,6 +149,10 @@ public class OpencvSampleListActivity extends ListActivity {
         list.add(map);
 
         map = new HashMap<String, Object>();
+        map.put("title", "汉字识别");
+        list.add(map);
+
+        map = new HashMap<String, Object>();
         map.put("title", "脸部Haar识别");
         list.add(map);
 
@@ -181,6 +194,10 @@ public class OpencvSampleListActivity extends ListActivity {
 
         map = new HashMap<String, Object>();
         map.put("title", "照相机与人脸识别应用");
+        list.add(map);
+
+        map = new HashMap<String, Object>();
+        map.put("title", "图片滤镜");
         list.add(map);
 
         map = new HashMap<String, Object>();

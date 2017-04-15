@@ -4,6 +4,7 @@
     <application android:icon="@drawable/logo"
                  android:label="@string/appName"
                  android:debuggable="true">
+        <!--
         <activity android:name=".WebRTCDemo"
                   android:theme="@android:style/Theme.Holo"
                   android:label="@string/appName"
@@ -15,12 +16,36 @@
                 <action android:name="android.intent.action.HEADSET_PLUG"/>
             </intent-filter>
         </activity>
+        -->
+        <activity android:name="org.appspot.apprtc.AppRTCDemoActivity"
+            android:label="@string/appName"
+            android:screenOrientation="fullUser"
+            android:configChanges="orientation|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="apprtc.appspot.com" />
+                <data android:scheme="http" android:host="apprtc.appspot.com" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
     <uses-sdk android:minSdkVersion="14" />
-    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"></uses-feature>
+
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
